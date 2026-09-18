@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Paullo Jeann — Engenheiro Civil com foco em pavimentação, infraestrutura viária, drenagem e projetos complementares." />
+  <meta name="theme-color" content="#0b0d0f" />
+  <title>Paullo Jeann | Engenharia Civil & Pavimentação</title>
+  <style>
+    :root{
+      --bg:#0b0d0f;
+      --bg2:#111519;
+      --card:#151a1f;
+      --soft:#1d242a;
+      --text:#f4f6f7;
+      --muted:#a7b0b8;
+      --line:#2a3239;
+      --accent:#ffd21c;
+      --accent2:#a6d900;
+      --white:#fff;
+      --shadow:0 20px 55px rgba(0,0,0,.25);
+      --radius:22px;
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 85% 12%, rgba(255,210,28,.10), transparent 24%),
+        linear-gradient(180deg,#0a0c0e 0%,#0b0d0f 58%,#0f1215 100%);
+      line-height:1.55;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:auto;padding:0 24px}
+    .nav{
+      position:sticky;top:0;z-index:30;
+      backdrop-filter:blur(14px);
+      background:rgba(11,13,15,.76);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav-inner{
+      min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px;
+    }
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.02em}
+    .brand-mark{
+      width:42px;height:42px;border-radius:13px;display:grid;place-items:center;
+      color:#0b0d0f;background:var(--accent);font-weight:900;box-shadow:0 8px 24px rgba(255,210,28,.18)
+    }
+    .nav-links{display:flex;gap:26px;align-items:center;color:#cbd1d6;font-size:14px}
+    .nav-links a:hover{color:#fff}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      border-radius:14px;padding:14px 18px;font-weight:800;font-size:14px;
+      border:1px solid var(--line);transition:.2s ease;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--accent);color:#111;border-color:transparent}
+    .btn-secondary{background:rgba(255,255,255,.04)}
+    .hero{padding:82px 0 52px}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:60px;align-items:center}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border-radius:999px;
+      border:1px solid #333b42;background:#11161a;color:#d8dde1;font-size:12px;font-weight:800;
+      letter-spacing:.12em;text-transform:uppercase;
+    }
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(255,210,28,.12)}
+    h1{
+      margin:24px 0 18px;font-size:clamp(44px,7vw,78px);line-height:.96;letter-spacing:-.055em;
+    }
+    .accent{color:var(--accent)}
+    .lead{font-size:clamp(18px,2.2vw,23px);max-width:720px;color:#bcc4ca;margin:0}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .mini{
+      margin-top:28px;display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:13px
+    }
+    .mini span{display:flex;align-items:center;gap:7px}
+    .mini b{color:#fff}
+    .visual{
+      position:relative;min-height:500px;border:1px solid #2b3339;border-radius:32px;
+      background:
+        linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.01)),
+        #111519;
+      box-shadow:var(--shadow);overflow:hidden;
+    }
+    .visual::before{
+      content:"";position:absolute;inset:auto -10% -22% -10%;height:70%;
+      background:linear-gradient(90deg,#2c3135,#1f2428);transform:rotate(-11deg);
+      border-top:4px solid #464d52;
+    }
+    .road{
+      position:absolute;left:12%;right:6%;bottom:-13%;height:76%;background:#252a2e;
+      transform:rotate(-11deg);border-left:4px solid #f8f8f8;border-right:4px solid #f8f8f8;
+      box-shadow:inset 0 0 0 1px #30363a;
+    }
+    .road::after{
+      content:"";position:absolute;top:0;bottom:0;left:50%;width:8px;transform:translateX(-50%);
+      background:repeating-linear-gradient(to bottom,var(--accent) 0 36px,transparent 36px 78px);
+    }
+    .visual-copy{position:relative;z-index:2;padding:34px;max-width:430px}
+    .visual-copy h3{font-size:30px;margin:15px 0 10px;line-height:1.08;letter-spacing:-.035em}
+    .visual-copy p{color:#b5bec5;margin:0}
+    .badge{
+      position:absolute;right:24px;top:26px;z-index:3;width:114px;height:114px;border-radius:50%;
+      border:1px solid #4a4f39;background:rgba(255,210,28,.09);display:grid;place-items:center;
+      text-align:center;font-size:12px;font-weight:900;letter-spacing:.08em;color:#ffe775;transform:rotate(8deg)
+    }
+    .section{padding:76px 0}
+    .section-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;margin-bottom:34px;align-items:end}
+    .kicker{color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+    h2{font-size:clamp(34px,5vw,56px);line-height:1.02;letter-spacing:-.045em;margin:10px 0 0}
+    .section-head p{margin:0;color:#aeb7be;max-width:650px;justify-self:end}
+    .focus-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .focus-card,.service-card,.project-card,.step{
+      background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));
+      border:1px solid #283038;border-radius:var(--radius);
+    }
+    .focus-card{padding:24px}
+    .focus-card .num{font-size:12px;color:#6f7880;margin-bottom:46px}
+    .focus-card h3{margin:0 0 7px;font-size:19px}
+    .focus-card p{margin:0;color:#9ca6ad;font-size:14px}
+    .about{
+      display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:start;
+      padding:34px;border:1px solid #2b3339;border-radius:30px;background:#101418
+    }
+    .about strong{font-size:24px;line-height:1.3}
+    .about p{color:#aab3ba;margin:0}
+    .services{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .service-card{padding:28px}
+    .service-card small{color:#77818a;text-transform:uppercase;letter-spacing:.11em;font-weight:800}
+    .service-card h3{font-size:25px;letter-spacing:-.025em;margin:9px 0 10px}
+    .service-card p{color:#a9b2b8;margin:0 0 22px}
+    .pill{
+      display:inline-flex;border:1px solid #394149;border-radius:999px;padding:7px 10px;
+      font-size:12px;color:#c7cfd5;margin:4px 5px 0 0
+    }
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .project-card{overflow:hidden}
+    .project-thumb{
+      min-height:190px;padding:22px;display:flex;align-items:flex-end;
+      background:
+        linear-gradient(135deg,rgba(255,210,28,.14),transparent 50%),
+        repeating-linear-gradient(90deg,transparent 0 54px,rgba(255,255,255,.03) 55px 56px),
+        #14191d;
+    }
+    .project-thumb b{font-size:15px;background:#0f1316;border:1px solid #353d44;padding:9px 11px;border-radius:10px}
+    .project-body{padding:22px}
+    .project-body h3{margin:0 0 8px;font-size:20px}
+    .project-body p{margin:0;color:#98a2aa;font-size:14px}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .step{padding:22px}
+    .step i{
+      width:42px;height:42px;border-radius:12px;background:var(--accent);color:#111;
+      display:grid;place-items:center;font-style:normal;font-weight:900;margin-bottom:34px
+    }
+    .step h3{margin:0 0 7px;font-size:18px}
+    .step p{margin:0;color:#98a2aa;font-size:14px}
+    .cta{
+      margin:70px 0 24px;border-radius:32px;padding:48px;
+      background:linear-gradient(120deg,#f5c900,#ffe34f);
+      color:#111;display:grid;grid-template-columns:1.25fr .75fr;gap:30px;align-items:center
+    }
+    .cta h2{margin:0 0 12px;font-size:clamp(36px,5vw,60px)}
+    .cta p{margin:0;max-width:700px;color:#4a4100}
+    .cta .actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap}
+    .cta .btn{background:#111;color:#fff;border-color:#111}
+    .cta .btn.secondary{background:transparent;color:#111}
+    footer{padding:34px 0 50px;color:#7f8991;font-size:13px}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid #242b31;padding-top:26px}
+    @media (max-width:900px){
+      .nav-links{display:none}
+      .hero{padding-top:56px}
+      .hero-grid,.section-head,.about,.cta{grid-template-columns:1fr}
+      .visual{min-height:390px}
+      .section-head p{justify-self:start}
+      .focus-grid,.steps{grid-template-columns:repeat(2,1fr)}
+      .projects{grid-template-columns:1fr}
+      .cta .actions{justify-content:flex-start}
+    }
+    @media (max-width:620px){
+      .wrap{padding:0 18px}
+      .hero{padding-bottom:36px}
+      .focus-grid,.services,.steps{grid-template-columns:1fr}
+      .section{padding:58px 0}
+      .visual{min-height:360px}
+      .visual-copy{padding:24px;max-width:300px}
+      .badge{width:94px;height:94px;right:16px;top:18px;font-size:10px}
+      .cta{padding:30px 24px}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="Início">
+        <span class="brand-mark">PJ</span>
+        <span>Paullo Jeann</span>
+      </a>
+      <div class="nav-links">
+        <a href="#atuacao">Atuação</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <a class="btn btn-primary" href="https://linktr.ee/PaulloJeann" target="_blank" rel="noopener">Falar comigo ↗</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> Engenharia Civil • Bahia • Online</span>
+          <h1>Engenharia com foco em <span class="accent">pavimentação</span> e infraestrutura.</h1>
+          <p class="lead">
+            Projetos, estudos técnicos e conteúdo aplicado para transformar dados de campo em soluções mais seguras, executáveis e bem documentadas.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#atuacao">Ver atuação técnica ↓</a>
+            <a class="btn btn-secondary" href="https://linktr.ee/PaulloJeann" target="_blank" rel="noopener">Projetos e contato</a>
+          </div>
+          <div class="mini">
+            <span>● <b>Pavimentação</b></span>
+            <span>● <b>Drenagem</b></span>
+            <span>● <b>Civil 3D</b></span>
+            <span>● <b>Projetos complementares</b></span>
+          </div>
+        </div>
+
+        <div class="visual" aria-label="Ilustração de uma via pavimentada">
+          <div class="visual-copy">
+            <span class="kicker">Novo posicionamento profissional</span>
+            <h3>Da engenharia predial para a infraestrutura viária.</h3>
+            <p>Um portfólio pensado para mostrar evolução técnica sem vender uma experiência que ainda está sendo construída.</p>
+          </div>
+          <div class="badge">FOCO<br>PAVIMENTAÇÃO<br>2026</div>
+          <div class="road"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="atuacao">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="kicker">Foco técnico</span>
+            <h2>O que quero construir na engenharia.</h2>
+          </div>
+          <p>
+            O site separa com clareza o que já pode ser oferecido hoje e o que representa a sua direção profissional em pavimentação — isso aumenta credibilidade e evita parecer que você está prometendo experiência que ainda está consolidando.
+          </p>
+        </div>
+
+        <div class="focus-grid">
+          <article class="focus-card">
+            <div class="num">01</div>
+            <h3>Pavimentação viária</h3>
+            <p>Dimensionamento, materiais, estrutura do pavimento, CBR e evolução para métodos mecanístico-empíricos.</p>
+          </article>
+          <article class="focus-card">
+            <div class="num">02</div>
+            <h3>Geometria e modelagem</h3>
+            <p>Traçado, perfil, seções, corredores, quantitativos e documentação técnica em Civil 3D.</p>
+          </article>
+          <article class="focus-card">
+            <div class="num">03</div>
+            <h3>Drenagem e infraestrutura</h3>
+            <p>Compatibilização da via com drenagem, dispositivos e soluções de infraestrutura urbana.</p>
+          </article>
+          <article class="focus-card">
+            <div class="num">04</div>
+            <h3>Sinalização viária</h3>
+            <p>Organização de projetos de sinalização horizontal e vertical vinculados ao projeto geométrico.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="wrap">
+        <div class="about">
+          <strong>Sou Paullo Jeann, engenheiro civil, com atuação em projetos e uma transição direcionada para pavimentação e infraestrutura viária.</strong>
+          <p>
+            Minha proposta é unir modelagem, compatibilização e documentação técnica com uma abordagem objetiva de projeto. Hoje, continuo atendendo demandas de projetos complementares enquanto aprofundo meu portfólio em pavimentação, drenagem, geometria viária e ferramentas BIM/CAD aplicadas à infraestrutura.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="kicker">Serviços e posicionamento</span>
+            <h2>Clareza sobre o que você entrega.</h2>
+          </div>
+          <p>Em vez de abandonar seu histórico, o site usa os projetos prediais como prova de base técnica e coloca pavimentação como o próximo eixo principal da carreira.</p>
+        </div>
+
+        <div class="services">
+          <article class="service-card">
+            <small>Foco em expansão</small>
+            <h3>Estudos e projetos de pavimentação</h3>
+            <p>Conteúdo técnico, estudos de dimensionamento, modelagem viária e desenvolvimento progressivo de portfólio na área.</p>
+            <span class="pill">CBR</span><span class="pill">MeDiNa</span><span class="pill">Civil 3D</span><span class="pill">Quantitativos</span>
+          </article>
+
+          <article class="service-card">
+            <small>Infraestrutura</small>
+            <h3>Drenagem e apoio a projetos viários</h3>
+            <p>Leitura de terreno, compatibilização, dispositivos de drenagem e documentação de apoio para projetos de infraestrutura.</p>
+            <span class="pill">Drenagem</span><span class="pill">Perfis</span><span class="pill">Seções</span><span class="pill">Compatibilização</span>
+          </article>
+
+          <article class="service-card">
+            <small>Serviço disponível</small>
+            <h3>Projetos elétricos</h3>
+            <p>Projetos com organização, compatibilização e foco em reduzir erros e retrabalho na execução.</p>
+            <span class="pill">Residencial</span><span class="pill">Comercial</span><span class="pill">Documentação</span>
+          </article>
+
+          <article class="service-card">
+            <small>Serviço disponível</small>
+            <h3>Projetos hidrossanitários</h3>
+            <p>Desenvolvimento de soluções de água fria, esgoto e sistemas complementares conforme a necessidade do projeto.</p>
+            <span class="pill">Água fria</span><span class="pill">Esgoto</span><span class="pill">Pluvial</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="kicker">Portfólio</span>
+            <h2>Mostre processo, não só resultado.</h2>
+          </div>
+          <p>Os três blocos abaixo estão prontos para receber imagens reais dos seus estudos e projetos. Isso é mais convincente do que colocar imagens genéricas de rodovias.</p>
+        </div>
+
+        <div class="projects">
+          <article class="project-card">
+            <div class="project-thumb"><b>Inserir imagem do Civil 3D</b></div>
+            <div class="project-body">
+              <h3>Modelagem de via no Civil 3D</h3>
+              <p>Alinhamento, perfil, seção típica, corredor e superfícies para projeto e levantamento de quantitativos.</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-thumb"><b>Inserir planilha / memorial</b></div>
+            <div class="project-body">
+              <h3>Dimensionamento de pavimentos</h3>
+              <p>Estudos comparativos de métodos, camadas, parâmetros de solo e documentação de cálculo.</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-thumb"><b>Inserir prancha de sinalização</b></div>
+            <div class="project-body">
+              <h3>Sinalização e infraestrutura</h3>
+              <p>Pranchas técnicas com sinalização, drenagem e elementos de apoio à implantação da via.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="kicker">Como apresentar seu trabalho</span>
+            <h2>Uma jornada profissional visível.</h2>
+          </div>
+          <p>Para quem está entrando em um nicho novo, evidência de aprendizado aplicado pesa mais do que um texto dizendo “especialista”.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><i>1</i><h3>Problema</h3><p>Mostre o contexto e a necessidade do projeto ou estudo.</p></div>
+          <div class="step"><i>2</i><h3>Método</h3><p>Apresente critérios, normas, softwares e hipóteses utilizadas.</p></div>
+          <div class="step"><i>3</i><h3>Entrega</h3><p>Exiba pranchas, modelos, memoriais e quantitativos.</p></div>
+          <div class="step"><i>4</i><h3>Aprendizado</h3><p>Registre decisões técnicas e o que foi aprimorado.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="wrap">
+        <div class="cta">
+          <div>
+            <h2>Projetos, parcerias e oportunidades.</h2>
+            <p>Para demandas de engenharia, trabalhos em infraestrutura ou oportunidades na área de pavimentação, fale comigo pelo link abaixo.</p>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://linktr.ee/PaulloJeann" target="_blank" rel="noopener">Abrir contatos ↗</a>
+            <a class="btn secondary" href="#top">Voltar ao topo ↑</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>© 2026 Paullo Jeann — Engenharia Civil</span>
+      <span>Pavimentação • Infraestrutura • Projetos complementares</span>
+    </div>
+  </footer>
+</body>
+</html>
